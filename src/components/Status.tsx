@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslate } from '../hooks/useTranslate';
 import { statusTranslator } from '../shared/status';
 import Chip, { ChipVariant } from './Chip';
 
@@ -9,6 +10,10 @@ type Props = {
 }
 
 const Status = ({state, action, selected=true}: Props) => {
+  const translate = useTranslate();
+
+  const statusTranslator2 = statusTranslator[state];
+
   let chipVariant: ChipVariant;
 
   switch (state) {
@@ -26,7 +31,7 @@ const Status = ({state, action, selected=true}: Props) => {
   return (
     <Chip
       variant={chipVariant}
-      text={statusTranslator[state]}
+      text={translate(statusTranslator[state])}
       selected={selected}
       action={action}
     />

@@ -3,10 +3,13 @@ import {Icon} from '@iconify/react';
 
 import colors from 'tailwindcss/colors';
 import Status from './Status';
+import { useTranslate } from '../hooks/useTranslate';
 
 type Props = Project;
 
 const ProjectCard = (props: Props) => {
+  const translate = useTranslate();
+
   return (
     <div className="w-full px-7 py-3 border rounded-xl">
       <div className="flex flex-row items-center gap-3">
@@ -21,12 +24,12 @@ const ProjectCard = (props: Props) => {
 
 
       <div>
-        <p className='text-xs text-slate-400 pt-2'>TECNOLOGIAS:</p>
+        <p className='text-xs text-slate-400 pt-2'>{translate('techs')}:</p>
         <p className="text-sm">{props.usedTechnologies.join(" • ")}</p>
       </div>
 
       <div>
-        <p className='text-xs text-slate-400 pt-2'>DESCRIÇÃO:</p>
+        <p className='text-xs text-slate-400 pt-2'>{translate('description')}:</p>
         <p className="text-sm">{props.description}</p>
       </div>
     </div>

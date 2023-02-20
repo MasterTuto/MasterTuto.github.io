@@ -1,9 +1,12 @@
 import React from 'react'
 import { FiltersSidebar, ProjectCard, SectionHeader } from '../components'
 import { projects } from '../data/projects';
+import { useTranslate } from '../hooks/useTranslate';
 import { statusTranslator } from '../shared/status';
 
 const Projects = () => {
+  const translate = useTranslate();
+
   const [filters, setFilters] = React.useState<ProjectFilters>({});
 
   const techs = React.useMemo(() => {
@@ -18,12 +21,12 @@ const Projects = () => {
 
   const possibleFilters = {
     query: {
-      name: 'Nome ou descrição',
+      name: translate('projects_filter_query'),
       value: '',
     },
     status: {
       name: 'Status',
-      text: (value: string) => statusTranslator[value],
+      text: (value: string) => statusTranslator[value as keyof typeof statusTranslator],
       value: [
         'finished',
         'in_progress',
@@ -31,7 +34,7 @@ const Projects = () => {
       ],
     },
     techs: {
-      name: 'Tecnologias',
+      name: translate('projects_filter_techs'),
       value: techs,
     },
   }
@@ -76,8 +79,8 @@ const Projects = () => {
   return (
     <div className='flex-1 flex flex-col w-full'>
       <SectionHeader
-        title='Projetos'
-        subtitle='Projetos que eu já participei ou que eu mesmo fiz'
+        title={translate('projects_title')}
+        subtitle={translate('projects_subtitle')}
       />
 
       <div className='flex flex-row w-full gap-3'>

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import { NavButton } from '../components'
+import { NavButton, Select } from '../components'
+import { TranslatorContext } from '../contexts/TranslatorContext'
 
 const MainLayout = () => {
+  const { language, setLanguage } = useContext(TranslatorContext);
+
   return (
     <div className="w-screen h-screen overflow-auto bg-gradient-to-b from-slate-800 to-slate-900 flex flex-col">
       <nav className="flex gap-3 align-middle w-full bg-transparent border-b border-b-slate-700 shadow-slate-700 shadow py-2 px-4">
@@ -13,6 +16,15 @@ const MainLayout = () => {
         <NavButton text="Experimentos" link="/experiments" />
         <NavButton text="Sobre mim" link="/about-me" />
         <NavButton text="Contato" link="/contact" />
+
+        <Select
+          options={[
+            { value: 'en', text: 'English' },
+            { value: 'pt', text: 'Português' },
+          ]}
+          value={language}
+          onChange={lang => setLanguage(lang as 'en' | 'pt')}
+        />
       </nav>
 
       <div className='px-12 py-5'>
