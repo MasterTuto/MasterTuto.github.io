@@ -1,21 +1,24 @@
 import React from 'react'
+import { useTranslate } from '../hooks/useTranslate';
 import Chip from './Chip';
 
-type FilterValue = {
+type FilterValue<T> = {
   name: string;
-  text?: (v: string) => string;
+  text?: (v: keyof T) => string;
   value: string|string[];
 };
 
 type Props<T extends Record<string, string|string[]>> = {
   possibleFilters: {
-    [key in keyof T]?: FilterValue;
+    [key in keyof T]?: FilterValue<T>;
   }
   filters: T;
   setFilters: (filters: T) => unknown;
 }
 
 const FiltersSidebar = <T extends Record<string, string|string[]>,>(props: Props<T>) => {
+  const translate = useTranslate();
+
   const isSelected = (key: keyof T, value: string) => {
     return props.filters[key]?.includes(value);
   }
@@ -34,7 +37,7 @@ const FiltersSidebar = <T extends Record<string, string|string[]>,>(props: Props
     }
   }
 
-  const renderMulti = (key: keyof T, filter: FilterValue) => {
+  const renderMulti = (key: keyof T, filter: FilterValue<T>) => {
     return (
       <>
         <p className='text-sm font-bold'>{filter.name}</p>
@@ -42,7 +45,7 @@ const FiltersSidebar = <T extends Record<string, string|string[]>,>(props: Props
           {(filter.value as string[])?.map((value) => (
             <Chip
               key={value}
-              text={props.possibleFilters[key]?.text?.(value) || value}
+              text={translate(props.possibleFilters[key]?.text?.(value) || value as any)}
               selected={isSelected(key, value)}
               action={() => handleMultiFilter(key, value)}
             />
@@ -52,7 +55,7 @@ const FiltersSidebar = <T extends Record<string, string|string[]>,>(props: Props
     )
   }
 
-  const renderSingle = (key: keyof T, filter: FilterValue) => {
+  const renderSingle = (key: keyof T, filter: FilterValue<T>) => {
     return (
       <>
         <p className='text-sm font-bold'>{filter.name}</p>
@@ -71,10 +74,10 @@ const FiltersSidebar = <T extends Record<string, string|string[]>,>(props: Props
 
   return (
     <div className='flex flex-col gap-3 px-3'>
-      <p className='text-xl font-bold'>Filtros</p>
+      <p className='text-xl font-bold'>{translate('filters')}</p>
 
       {Object.entries(props.possibleFilters).map((entry) => {
-        const [key, filter] = entry as [keyof T, FilterValue];
+        const [key, filter] = entry as [keyof T, FilterValue<T>];
         
         let result;
         if (!filter) result = null;

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { ExperienceItem, SectionHeader, Select, Timeline } from '../components';
 import { experiences } from '../data/work';
+import { useTranslate } from '../hooks/useTranslate';
 
 const Experience = () => {
+  const translate = useTranslate();
+
   const [viewAs, setViewAs] = useState<'timeline' | 'text'>('text');
 
   experiences.sort((a, b) => {
@@ -17,15 +20,15 @@ const Experience = () => {
   return (
     <div className="flex flex-col w-full">
       <SectionHeader
-        title="Experiência"
-        subtitle="Todos os trabalhos que já firmei contrato, ou seja, sem freelas"
+        title={translate('experience_title')}
+        subtitle={translate('experience_subtitle')}
       />
 
       <div className='pl-5'>
         <Select
           options={[
-            { value: 'text', text: 'Visualizar em sequência' },
-            { value: 'timeline', text: 'Visualizar em timeline' },
+            { value: 'text', text: translate('experience_select_sequence') },
+            { value: 'timeline', text: translate('experience_select_timeline') },
           ]}
           value={viewAs}
           onChange={(op) => setViewAs(op as typeof viewAs)}

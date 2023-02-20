@@ -7,8 +7,10 @@ import { Link } from 'react-router-dom'
 import { Icon } from '@iconify/react'
 import { experiments } from '../data/experiments';
 import { HomeDetail } from '../components';
+import { useTranslate } from '../hooks/useTranslate';
 
 const Home = () => {
+  const translate = useTranslate();
 
   /* Experience */
   const currentYear = new Date().getFullYear();
@@ -23,8 +25,8 @@ const Home = () => {
 
   /* Experiments */
 
-  const exerimentsFields = Array.from(experiments.reduce((acc, {tag}) => {
-    return new Set([...acc, tag.toLowerCase()]);
+  const experimentsFields = Array.from(experiments.reduce((acc, {tag}) => {
+    return new Set([...acc, translate(tag.toLowerCase() as any)]);
   }, new Set<string>())).sort();
 
   // To modify mug colors, alter [0.368627011776,0.694118022919,0.450980007648,1]
@@ -34,49 +36,49 @@ const Home = () => {
 
       <Lottie animationData={coffee} className="w-96 h-96" />
       
-      <h1 className="text-4xl font-bold">Olá, eu sou <span className="text-white">Breno</span>.</h1>
-      <h3 className="text-2xl py-2">Escrevo códigos. Entrego soluções. <span className='line-through decoration-1'>Bebo café.</span></h3>
+      <h1 className="text-4xl font-bold">{translate('home_presentation')}<span className="text-white">Breno</span>.</h1>
+      <h3 className="text-2xl py-2">{translate('home_call_text')} <span className='line-through decoration-1'>{translate('home_call_coffee')}</span></h3>
 
-      <h6 className="text-sm italic">Desenvolvedor Frontend • 3 anos de experiência • Caminhando para o fullstack</h6>
+      <h6 className="text-sm italic">{translate('home_call_description')}</h6>
 
       <Icon icon="bi:chevron-double-down" className="text-4xl text-slate-300 mt-4 mb-10 animate-bounce" />
 
       <div className="flex flex-col gap-10">
         <HomeDetail
-          title='EXPERIÊNCIA'
+          title={translate('home_detail_experience')}
           icon='bi:briefcase'
           details={[
-            `Em ${totalYears} anos de experiência trabalhei em ${experiences.length} empresas`,
-            `Utilizando tecnologias como ${allTechnologies.join(', ')}.`
+            translate('home_detail_experience_description_1', totalYears, experiences.length),
+            translate('home_detail_experience_description_2', allTechnologies.join(', '))
           ]}
           link='/experience'
-          linkText='Ver mais sobre minhas experiências profissionais'
+          linkText={translate('home_detail_experience_text')}
         />
 
         <HomeDetail
-          title='PROJETOS'
+          title={translate('home_detail_projects')}
           icon='bi:code-slash'
           details={[
-            `Nesse portfolio, apresento ${projects.length} projetos de minha autoria.`,
-            `Todos apresentam documentação, fotos e são de código aberto. Pode conferir no meu GitHub.`
+            translate('home_detail_projects_description_1', projects.length),
+            translate('home_detail_projects_description_2')
           ]}
           link='/projects'
-          linkText='Ver mais projetos de minha autoria'
+          linkText={translate('home_detail_projects_text')}
         />
 
         <HomeDetail
-          title='EXPERIMENTOS'
+          title={translate('home_detail_experiments')}
           icon='raphael:lab'
           details={[
-            `Realizo experimentos, onde brinco com as linguagens que conheço (como HTML, CSS, JavaScript, TypeScript e Python) e faço pequenos projetos e script que julgo interessante. Geralmente de código livre e são snippets.`,
-            `Atualmente tenho desafios das áreas de ${exerimentsFields.join(', ')}.`
+            translate('home_detail_experiments_description_1'),
+            translate('home_detail_experiments_description_2', experimentsFields.join(', '))
           ]}
           link='/experiments'
-          linkText='Ir ao laboratório'
+          linkText={translate('home_detail_experiments_text')}
         />
       </div>
 
-      <Link to="/about-me" className="text-3xl hover:text-white mt-5">Me conheça mais!</Link>
+      <Link to="/about-me" className="text-3xl hover:text-white mt-5">{translate('home_detail_about')}</Link>
     </div>
   )
 }

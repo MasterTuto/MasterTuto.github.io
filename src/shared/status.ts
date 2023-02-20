@@ -1,5 +1,5 @@
-export const statusTranslator: Record<string, string> = {
-  finished: 'Finalizado',
-  in_progress: 'Em progresso',
-  abandoned: 'Abandonado',
-}
+export const statusTranslator = {
+  finished: 'status_finished',
+  in_progress: 'status_in_progress',
+  abandoned: 'status_abandoned',
+} as const;

@@ -1,7 +1,7 @@
 export const projects: Project[] = [
   {
     name: 'Breno CS',
-    description: 'Este site',
+    description: 'This website',
     status: 'in_progress',
     link: 'https://brenocs.com',
     usedTechnologies: [
@@ -15,7 +15,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Obsidian MindMap',
-    description: 'Um plugin para o Obsidian que permite criar mapas mentais. Este plugin foi feito em um trabalho de freelancer, porém é open source.',
+    description: 'A plugin for Obsidian that allows you to create mind maps. This plugin was made in a freelance job, but it is open source.',
     link: 'https://github.com/verocloud/obsidian-mindmap-nextgen',
     status: 'in_progress',
     usedTechnologies: [
@@ -27,7 +27,7 @@ export const projects: Project[] = [
   },
   {
     name: '100 Days of Code - Golang',
-    description: 'Um projeto que eu fiz para praticar Golang. O projeto consiste em vários exemplos de código, um por dia, para praticar a linguagem. Não concluído ainda.',
+    description: 'A project that I did to practice Golang. The project consists of several examples of code, one per day, to practice the language. Not finished yet.',
     link: 'https://github.com/MasterTuto/100days',
     status: 'in_progress',
     usedTechnologies: [
@@ -37,7 +37,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Caixeiro Viajante - Hill Climbing',
-    description: 'Implementação do algoritmo Hill Climbing para o problema do caixeiro viajante. Este projeto foi feito para a disciplina de Inteligência Artificial.',
+    description: 'Implementation of the Hill Climbing algorithm for the travelling salesman problem. This project was made for the Artificial Intelligence discipline.',
     link: 'https://github.com/MasterTuto/CaixeiroViajanteHillClimbing',
     status: 'finished',
     usedTechnologies: [
@@ -48,7 +48,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Taskkke',
-    description: 'Um projeto que eu fiz para praticar React. É um gerenciador de tarefas simples, com autenticação e tudo mais.',
+    description: 'A project that I did to practice React. It is a simple task manager, with authentication and everything else.',
     link: 'https://github.com/MasterTuto/taskkke',
     status: 'finished',
     usedTechnologies: [
@@ -60,7 +60,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Jeferson',
-    description: 'Um bot para o Discord que eu fiz para gerenciar um servidor de filmes. Não foi concluido, mas aprendi a usar a API.',
+    description: 'A bot for Discord that I made to manage a movie server. Not finished, but I learned to use the API.',
     link: 'https://github.com/MasterTuto/Jeferson',
     status: 'abandoned',
     usedTechnologies: [
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   },
   {
     name: 'InstaBotGui',
-    description: 'Um bot para sorteios no Instagram. Escrito em Python, este bot comentava várias vezes em publicações de sorteios. Este projeto em si foi uma tentativa de uma interface para ele.',
+    description: 'A bot for Instagram giveaways. Written in Python, this bot commented several times on giveaway posts. This project itself was an attempt at an interface for it.',
     link: 'https://github.com/MasterTuto/InstaBotGui',
     status: 'abandoned',
     usedTechnologies: [
@@ -84,7 +84,7 @@ export const projects: Project[] = [
   },
   {
     name: 'CatiaCorrige',
-    description: 'Um programa que ajuda em correções de prova de programação. Feito pensando na professora cátia de API, pensando principalmente em usabilidade.',
+    description: 'A program that helps in correcting programming test. Made thinking about teacher cátia de API, thinking mainly about usability.',
     status: 'in_progress',
     link: 'https://github.com/MasterTuto/CatiaCorrige',
     usedTechnologies: [
@@ -96,7 +96,7 @@ export const projects: Project[] = [
   },
   {
     name: 'PC',
-    description: 'Este é um script para automatizar e gerenciar os trabalhos da disciplina de Programação Concorrente. Onde o professor sempre pedia os trabalhos em um formato específico.',
+    description: 'This is a script to automate and manage the work of the Concurrent Programming discipline. Where the teacher always asked for the work in a specific format.',
     link: 'https://github.com/MasterTuto/pc',
     status: 'finished',
     usedTechnologies: [
@@ -105,7 +105,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Pendura Aí',
-    description: 'Programa feito para disc',
+    description: 'Program made for the Algorithms and Programming 2 discipline, as a final project. It had a graphical interface, UML model and more.',
     link: 'https://github.com/MasterTuto/PenduraAi',
     status: 'finished',
     usedTechnologies: [
