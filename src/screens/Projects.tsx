@@ -1,0 +1,105 @@
+import React from 'react'
+import { FiltersSidebar, ProjectCard, SectionHeader } from '../components'
+import { projects } from '../data/projects';
+import { statusTranslator } from '../shared/status';
+
+const Projects = () => {
+  const [filters, setFilters] = React.useState<ProjectFilters>({});
+
+  const techs = React.useMemo(() => {
+    const techs = new Set<string>()
+    projects.forEach(project => {
+      project.usedTechnologies.forEach(tech => {
+        techs.add(tech)
+      })
+    })  
+    return Array.from(techs).sort();
+  }, []);
+
+  const possibleFilters = {
+    query: {
+      name: 'Nome ou descrição',
+      value: '',
+    },
+    status: {
+      name: 'Status',
+      text: (value: string) => statusTranslator[value],
+      value: [
+        'finished',
+        'in_progress',
+        'abandoned',
+      ],
+    },
+    techs: {
+      name: 'Tecnologias',
+      value: techs,
+    },
+  }
+
+  const filteredProjects = projects.filter(project => {
+    const query = filters?.query?.toLowerCase() || '';
+    const status = filters?.status?.length ? filters?.status : project.status;
+    const techs = filters?.techs?.length ? filters?.techs : project.usedTechnologies;
+    
+    if (
+      (project.name.toLowerCase().includes(query.toLowerCase()) ||
+      project.description.toLowerCase().includes(query.toLowerCase())) &&
+      status?.includes(project.status) &&
+      project.usedTechnologies.some(tech => techs?.includes(tech))
+    ) {
+      return true
+    }
+
+    return false;
+  }).sort((project1, project2) => {
+    const statusPriorities: Record<Status, number> = {
+      finished: 1,
+      in_progress: 2,
+      abandoned: 3,
+    };
+
+    let result = statusPriorities[project1.status] - statusPriorities[project2.status];
+
+    if (result == 0) {
+      if (project1.name < project2.name)
+        return -1;
+      
+      if (project1.name > project2.name)
+        return 1;
+      
+      return 0;
+    }
+
+    return result;
+  })
+
+  return (
+    <div className='flex-1 flex flex-col w-full'>
+      <SectionHeader
+        title='Projetos'
+        subtitle='Projetos que eu já participei ou que eu mesmo fiz'
+      />
+
+      <div className='flex flex-row w-full gap-3'>
+        <div className='flex flex-col w-1/4'>
+          <FiltersSidebar
+            possibleFilters={possibleFilters}
+            filters={filters}
+            setFilters={setFilters}
+          />
+        </div>
+
+        <div className='flex flex-col w-3/4 gap-4 overflow-auto h-full max-h-full'>
+          {filteredProjects.map(project => (
+            <ProjectCard
+              key={project.name}
+              {...project}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Projects
