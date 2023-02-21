@@ -44,6 +44,12 @@ export const dictionary = {
     status_in_progress: 'Em progresso',
     status_abandoned: 'Abandonado',
 
+    nav_experience: 'Experiência',
+    nav_projects: 'Projetos',
+    nav_experiments: 'Experimentos',
+    nav_about_me: 'Sobre mim',
+    nav_contact: 'Contato',
+
     experiment_wikipedia_speedrun_title: 'Wikipedia Speedrun',
     experiment_wikipedia_speedrun_description: 'Script para encontrar menor caminho entre dois artigos da Wikipedia',
     experiment_wikipedia_speedrun_tag: 'Algoritmos',
@@ -118,7 +124,7 @@ export const dictionary = {
     home_call_coffee: 'I drink coffee.',
     home_call_description: 'Frontend Developer • 3 years of experience • Going towards the fullstack',
     home_detail_experience: 'EXPERIENCE',
-    home_detail_experience_description_1: 'In {{0}} I have worked on {{1}} companies',
+    home_detail_experience_description_1: 'In {{0}} years I have worked on {{1}} companies',
     home_detail_experience_description_2: 'Using technologies like {{0}}',
     home_detail_experience_text: 'Check out more about my professional experiences',
     home_detail_projects: 'PROJECTS',
@@ -137,6 +143,12 @@ export const dictionary = {
     status_finished: 'Finished',
     status_in_progress: 'In progress',
     status_abandoned: 'Abandoned',
+
+    nav_experience: 'Experience',
+    nav_projects: 'Projects',
+    nav_experiments: 'Experiments',
+    nav_about_me: 'About me',
+    nav_contact: 'Contact',
 
 
     experiment_wikipedia_speedrun_title: 'Wikipedia Speedrun',
@@ -189,3 +201,4 @@ export const dictionary = {
     experience_perinity_description: '',
   },
 }
+

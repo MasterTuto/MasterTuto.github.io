@@ -2,8 +2,10 @@ import React, { useContext } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { NavButton, Select } from '../components'
 import { TranslatorContext } from '../contexts/TranslatorContext'
+import { useTranslate } from '../hooks/useTranslate'
 
 const MainLayout = () => {
+  const translate = useTranslate();
   const { language, setLanguage } = useContext(TranslatorContext);
 
   return (
@@ -11,11 +13,11 @@ const MainLayout = () => {
       <nav className="flex gap-3 align-middle w-full bg-transparent border-b border-b-slate-700 shadow-slate-700 shadow py-2 px-4">
         <Link to="/" className='text-xl flex-1'>Breno CS</Link>
 
-        <NavButton text="Experiência" link="/experience" />
-        <NavButton text="Projetos" link="/projects" />
-        <NavButton text="Experimentos" link="/experiments" />
-        <NavButton text="Sobre mim" link="/about-me" />
-        <NavButton text="Contato" link="/contact" />
+        <NavButton text={translate('nav_experience')} link="/experience" />
+        <NavButton text={translate('nav_projects')} link="/projects" />
+        <NavButton text={translate('nav_experiments')} link="/experiments" />
+        <NavButton text={translate('nav_about_me')} link="/about-me" />
+        <NavButton text={translate('nav_contact')} link="/contact" />
 
         <Select
           options={[
