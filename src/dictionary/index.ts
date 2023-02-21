@@ -124,7 +124,7 @@ export const dictionary = {
     home_call_coffee: 'I drink coffee.',
     home_call_description: 'Frontend Developer • 3 years of experience • Going towards the fullstack',
     home_detail_experience: 'EXPERIENCE',
-    home_detail_experience_description_1: 'In {{0}} I have worked on {{1}} companies',
+    home_detail_experience_description_1: 'In {{0}} years I have worked on {{1}} companies',
     home_detail_experience_description_2: 'Using technologies like {{0}}',
     home_detail_experience_text: 'Check out more about my professional experiences',
     home_detail_projects: 'PROJECTS',
