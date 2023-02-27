@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react';
 import React from 'react'
-import profilePicturePlaceholder from '../assets/pfp-placeholder.jpg';
+import profilePicture from '../assets/picture.png';
 import { socials } from '../data/social';
 import { useTranslate } from '../hooks/useTranslate';
 
@@ -9,11 +9,13 @@ const AboutMe = () => {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <img
-        src={profilePicturePlaceholder}
-        alt="Profile Picture"
-        className="rounded-full w-48 h-48"
-      />
+      <div className="rounded-full w-48 h-48 overflow-hidden">
+        <img
+          src={profilePicture}
+          alt="Profile Picture"
+          className="scale-125 translate-x-5 translate-y-5 object-cover rounded-full"
+        />
+      </div>
 
       <h1 className="text-3xl font-bold mt-4 text-center">Breno Carvalho da Silva</h1>
       <h2 className="text-xl font-medium mt-2">{translate('software_engineer')}</h2>
