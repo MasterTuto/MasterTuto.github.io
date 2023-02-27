@@ -15,7 +15,7 @@ const HomeDetail = ({details, link, linkText, title, icon}: Props) => {
     <div className="flex flex-col justify-center text-white border-b pb-3">
       <p className="text-sm tracking-wide text-slate-300">{title}</p>
 
-      <div className="flex flex-row items-center gap-4">
+      <div className="flex md:flex-row items-center gap-4 flex-col">
         <Icon icon={icon} className="text-8xl m-6" />
 
         <ul className='list-disc pl-5'>

@@ -52,12 +52,12 @@ const Chip = ({
     };
   }
 
-  const colorsClasses = `hover:${variantStyle.bg} hover:${variantStyle.text} ${selected ? `${variantStyle.text} ${variantStyle.bg}` : ''}`;
-  const shadowClasses = action ? `hover:shadow-lg hover:shadow-slate-600 ${selected ? `text-slate-800` : ''}` : ''
+  const colorsClasses = `hover-hover:hover:${variantStyle.bg} hover-hover:hover:${variantStyle.text} ${selected ? `${variantStyle.text} ${variantStyle.bg}` : ''}`;
+  const shadowClasses = action ? `hover-hover:hover:shadow-lg hover-hover:hover:shadow-slate-600 ${selected ? `text-slate-800` : ''}` : ''
   const cursorClasses = action ? 'cursor-pointer' : 'cursor-default';
 
   return (
-    <button onClick={action} className={`text-${size} border rounded-full px-3 py-1 ${colorsClasses} ${shadowClasses} ${className} ${cursorClasses}`}>
+    <button onClick={action} className={`text-${size} border w-fit rounded-full px-3 py-1 ${colorsClasses} ${shadowClasses} ${className} ${cursorClasses}`}>
       {text}
     </button>
   )

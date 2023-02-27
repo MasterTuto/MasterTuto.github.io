@@ -61,7 +61,7 @@ const Projects = () => {
       abandoned: 3,
     };
 
-    let result = statusPriorities[project1.status] - statusPriorities[project2.status];
+    let result: number = statusPriorities[project1.status] - statusPriorities[project2.status];
 
     if (result == 0) {
       if (project1.name < project2.name)
@@ -83,8 +83,8 @@ const Projects = () => {
         subtitle={translate('projects_subtitle')}
       />
 
-      <div className='flex flex-row w-full gap-3'>
-        <div className='flex flex-col w-1/4'>
+      <div className='flex lg:flex-row w-full gap-3 flex-col'>
+        <div className='flex flex-col lg:w-1/4 w-full'>
           <FiltersSidebar
             possibleFilters={possibleFilters}
             filters={filters}
@@ -92,7 +92,7 @@ const Projects = () => {
           />
         </div>
 
-        <div className='flex flex-col w-3/4 gap-4 overflow-auto h-full max-h-full'>
+        <div className='flex flex-col lg:w-3/4 gap-4 overflow-auto h-full max-h-full w-full'>
           {filteredProjects.map(project => (
             <ProjectCard
               key={project.name}

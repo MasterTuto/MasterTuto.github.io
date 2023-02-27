@@ -43,6 +43,8 @@ export const dictionary = {
     status_finished: 'Finalizado',
     status_in_progress: 'Em progresso',
     status_abandoned: 'Abandonado',
+    filter_btn: 'Filtrar',
+    visit: 'Veja',
 
     nav_experience: 'Experiência',
     nav_projects: 'Projetos',
@@ -55,7 +57,7 @@ export const dictionary = {
     experiment_wikipedia_speedrun_tag: 'Algoritmos',
     experiment_sudoku_coloring_title: 'Sudoku com Coloração',
     experiment_sudoku_coloring_description: 'Resolver um sudoku usando coloração de grafos',
-    experiment_sudoku_coloring_tag: 'Resolver um sudoku usando coloração de grafos',
+    experiment_sudoku_coloring_tag: 'Algoritmos',
     experiment_typelevel_sum_title: 'Somador em Type Level',
     experiment_typelevel_sum_description: 'Somar dois números usando o type system do Typescript',
     experiment_typelevel_sum_tag: 'Type Level',
@@ -143,6 +145,8 @@ export const dictionary = {
     status_finished: 'Finished',
     status_in_progress: 'In progress',
     status_abandoned: 'Abandoned',
+    filter_btn: 'Filter',
+    visit: 'Check out',
 
     nav_experience: 'Experience',
     nav_projects: 'Projects',

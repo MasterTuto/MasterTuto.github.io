@@ -14,7 +14,7 @@ const Experiments = () => {
         subtitle={translate('experiments_subtitle')}
       />
 
-      <div className="grid grid-cols-5 gap-2">
+      <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
         {experiments.map(({description, name, tag, ...experiment}) => (
           <ExperimentCard
             name={translate(name as any)}

@@ -1,7 +1,7 @@
 export const projects: Project[] = [
   {
     name: 'Breno CS',
-    description: 'This website',
+    description: 'project_brenocs_description',
     status: 'in_progress',
     link: 'https://brenocs.com',
     usedTechnologies: [
@@ -15,7 +15,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Obsidian MindMap',
-    description: 'A plugin for Obsidian that allows you to create mind maps. This plugin was made in a freelance job, but it is open source.',
+    description: 'project_obsidian_mindmap_description',
     link: 'https://github.com/verocloud/obsidian-mindmap-nextgen',
     status: 'in_progress',
     usedTechnologies: [
@@ -27,7 +27,7 @@ export const projects: Project[] = [
   },
   {
     name: '100 Days of Code - Golang',
-    description: 'A project that I did to practice Golang. The project consists of several examples of code, one per day, to practice the language. Not finished yet.',
+    description: 'project_100_days_golang_description',
     link: 'https://github.com/MasterTuto/100days',
     status: 'in_progress',
     usedTechnologies: [
@@ -37,7 +37,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Caixeiro Viajante - Hill Climbing',
-    description: 'Implementation of the Hill Climbing algorithm for the travelling salesman problem. This project was made for the Artificial Intelligence discipline.',
+    description: 'project_hill_climbing_description',
     link: 'https://github.com/MasterTuto/CaixeiroViajanteHillClimbing',
     status: 'finished',
     usedTechnologies: [
@@ -48,7 +48,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Taskkke',
-    description: 'A project that I did to practice React. It is a simple task manager, with authentication and everything else.',
+    description: 'project_taskkke_description',
     link: 'https://github.com/MasterTuto/taskkke',
     status: 'finished',
     usedTechnologies: [
@@ -60,7 +60,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Jeferson',
-    description: 'A bot for Discord that I made to manage a movie server. Not finished, but I learned to use the API.',
+    description: 'project_jeferson_description',
     link: 'https://github.com/MasterTuto/Jeferson',
     status: 'abandoned',
     usedTechnologies: [
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   },
   {
     name: 'InstaBotGui',
-    description: 'A bot for Instagram giveaways. Written in Python, this bot commented several times on giveaway posts. This project itself was an attempt at an interface for it.',
+    description: 'project_instabotgui_description',
     link: 'https://github.com/MasterTuto/InstaBotGui',
     status: 'abandoned',
     usedTechnologies: [
@@ -84,7 +84,7 @@ export const projects: Project[] = [
   },
   {
     name: 'CatiaCorrige',
-    description: 'A program that helps in correcting programming test. Made thinking about teacher cátia de API, thinking mainly about usability.',
+    description: 'project_catia_corrige_description',
     status: 'in_progress',
     link: 'https://github.com/MasterTuto/CatiaCorrige',
     usedTechnologies: [
@@ -96,7 +96,7 @@ export const projects: Project[] = [
   },
   {
     name: 'PC',
-    description: 'This is a script to automate and manage the work of the Concurrent Programming discipline. Where the teacher always asked for the work in a specific format.',
+    description: 'project_pc_description',
     link: 'https://github.com/MasterTuto/pc',
     status: 'finished',
     usedTechnologies: [
@@ -105,7 +105,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Pendura Aí',
-    description: 'Program made for the Algorithms and Programming 2 discipline, as a final project. It had a graphical interface, UML model and more.',
+    description: 'project_pendura_ai_description',
     link: 'https://github.com/MasterTuto/PenduraAi',
     status: 'finished',
     usedTechnologies: [
