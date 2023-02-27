@@ -3,8 +3,9 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import SelectButton from './SelectButton'
 
 type NavButtonProps = {
-  text: string
-  link: string
+  text: string;
+  link: string;
+  onClick?: () => void;
 }
 
 const NavButton = (props: NavButtonProps) => {
@@ -14,7 +15,10 @@ const NavButton = (props: NavButtonProps) => {
   return (
     <SelectButton
       text={props.text}
-      action={() => navigate(props.link)}
+      action={() => {
+        navigate(props.link);
+        props.onClick?.();
+      }}
       selected={currentPath === props.link}
     />
   )

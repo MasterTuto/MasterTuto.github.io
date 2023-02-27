@@ -10,13 +10,13 @@ const Contact = (props: Props) => {
   const translate = useTranslate();
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-full">
       <SectionHeader
         title={translate('contact_title')}
         subtitle={translate('contact_subtitle')}
       />
 
-      <div className="flex flex-col items-center gap-3 w-80">
+      <div className="flex flex-col items-center gap-3 max-w-xs w-full">
         {socials.map((social, index) => (
           <a
             key={index}

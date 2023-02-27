@@ -34,12 +34,12 @@ const Home = () => {
     <div className="flex flex-col items-center w-full text-slate-300">
       <p className="text-xs italic">TypeScript • Open Source</p>
 
-      <Lottie animationData={coffee} className="w-96 h-96" />
+      <Lottie animationData={coffee} className="w-full max-w-sm h-96" />
       
-      <h1 className="text-4xl font-bold">{translate('home_presentation')}<span className="text-white">Breno</span>.</h1>
-      <h3 className="text-2xl py-2">{translate('home_call_text')} <span className='line-through decoration-1'>{translate('home_call_coffee')}</span></h3>
+      <h1 className="text-4xl font-bold text-center">{translate('home_presentation')}<span className="text-white">Breno</span>.</h1>
+      <h3 className="text-2xl py-2 text-center">{translate('home_call_text')} <span className='line-through decoration-1'>{translate('home_call_coffee')}</span></h3>
 
-      <h6 className="text-sm italic">{translate('home_call_description')}</h6>
+      <h6 className="text-sm italic text-center">{translate('home_call_description')}</h6>
 
       <Icon icon="bi:chevron-double-down" className="text-4xl text-slate-300 mt-4 mb-10 animate-bounce" />
 

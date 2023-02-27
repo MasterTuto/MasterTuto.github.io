@@ -11,3 +11,5 @@ export { default as Status } from './Status';
 export { default as ExperimentCard } from './ExperimentCard';
 export { default as StarLevel } from './StarLevel';
 export { default as HomeDetail } from './HomeDetail';
+export { default as NavBar } from './NavBar';
+export { default as SideBar } from './SideBar';
