@@ -1,0 +1,14 @@
+.link {
+    @apply text-white;
+    writing-mode: vertical-lr;
+}
+.link.active {
+    @apply text-green-500;
+}
+.link::before {
+    @apply bg-transparent h-1/2 my-auto w-[3px] mr-1 block;
+    content: "";
+}
+.link.active::before {
+    @apply bg-green-500;
+}

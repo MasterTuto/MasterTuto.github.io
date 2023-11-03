@@ -1,0 +1,11 @@
+<nav class="absolute right-0 mr-4 h-screen flex justify-center items-center">
+    <ul class="flex flex-col gap-4">
+       <app-navigation-button
+          [title]="item.title"
+          [href]="item.href"
+          [selected]="selected == i"
+          (click)="selected = i"
+          *ngFor="let item of navitems; let i = index"
+       ></app-navigation-button>
+    </ul>
+</nav>
