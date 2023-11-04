@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NavigationModule } from './components/navigation/navigation.module';
+import { PortfolioFeedModule } from './screens/portfolio-feed/portfolio-feed.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { NavigationModule } from './components/navigation/navigation.module';
   ],
   imports: [
     BrowserModule,
-    NavigationModule
+    NavigationModule,
+    PortfolioFeedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
