@@ -7,3 +7,9 @@
     margin: 0;
     padding: 0;
 }
+
+@layer base {
+    .outlined-text {
+        text-shadow: 1px 1px 0 #ddd5, 1px -1px 0 #ddd5, -1px 1px 0 #ddd5, -1px -1px 0 #ddd5, 1px 0px 0 #ddd5, 0px 1px 0 #ddd5, -1px 0px 0 #ddd5, 0px -1px 0 #ddd5;
+    }
+}

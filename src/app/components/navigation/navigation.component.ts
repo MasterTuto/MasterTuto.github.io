@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Subject, skip, skipUntil, take } from 'rxjs';
-import { NavItem } from 'src/app/model/nav-item.model';
-import { SectionService } from 'src/app/service/section.service';
+import { Subject } from 'rxjs';
+import { sections } from 'src/app/data/sections.data';
+import { SectionStateService } from 'src/app/service/section-state.service';
 
 @Component({
   selector: 'app-navigation',
@@ -9,32 +9,28 @@ import { SectionService } from 'src/app/service/section.service';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  sectionService = inject(SectionService);
+  sectionStateService = inject(SectionStateService);
 
   selected = 0;  
-  navitems = this.sectionService.navitems;
+  navItems = sections;
 
   _unsubscribe = new Subject();
 
-  constructor() { }
-
   ngOnInit(): void {
-    this.sectionService.currentSectionIndex$
-      .pipe(skip(1))
-      .subscribe((sectionIndex) => {
-        this.selected = sectionIndex;
-      })
+    this.sectionStateService.currentSection$.subscribe(
+      (sectionIndex) => this.selected = sectionIndex
+    );
 
     let hash = window.location.hash;
-    this.navitems
+    this.navItems
       .forEach((item, index) => {
         if (item.href === hash) {
-          this.selected = index;
+          this.sectionStateService.currentSection = index;
         }
       });
   }
 
   changeSelectedSection(sectionIndex: number): void {
-    this.sectionService.currentSectionIndex$.next(sectionIndex);
+    this.sectionStateService.currentSection = sectionIndex;
   }
 }

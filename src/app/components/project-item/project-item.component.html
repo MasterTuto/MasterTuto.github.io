@@ -1,0 +1,8 @@
+<a [href]="project.link" target="open_project" [class]="containerClass">
+    <div [class]="iconBorderColor">
+        <ng-icon [name]="iconName" size="24" [class]="iconColor"></ng-icon>
+    </div>
+
+    <h1 class="mb-2 font-semibold line-clamp-1">{{project.name}}</h1>
+    <p class="line-clamp-4">{{project.description}}</p>
+</a>

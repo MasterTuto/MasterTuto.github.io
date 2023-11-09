@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { concat, concatMap, delay, from, ignoreElements, interval, map, of, repeat, take, tap } from 'rxjs';
+import { Component, OnInit, inject } from '@angular/core';
+import { TypingEffectService } from 'src/app/service/typing-effect.service';
 
 @Component({
   selector: 'app-home-section',
@@ -7,40 +7,21 @@ import { concat, concatMap, delay, from, ignoreElements, interval, map, of, repe
   styleUrls: ['./home-section.component.scss']
 })
 export class HomeSectionComponent implements OnInit {
+  typingEffectService = inject(TypingEffectService);
+
   profession: string = "";
 
   requestsExample = `import math\n\nn = int(input(“Type a number: ”))\nsqrt_n = math.sqrt(n)\nprint( f”sqrt of {n} = {sqrt_n}” )`;
   todoList = `<p>Todo:</p>\n<ul>\n    <li>Laundry</li>\n    <li>Shopping</li>\n    <li>Fixes</li>\n</ul>`;
   product = `let n = 1;\nfor (let i=0; i < 10; i++) {   n *= i;\n}\nconsole.log(\`n: \${n}\`);`
-
-  constructor() { }
+  cssExample = `.title {\n    font-size: 7em;\n    font-family: Inter, sans-serif;\n}`
 
   ngOnInit(): void {
     const words = ["FRONT-END", "AUTOMATION", "FULLSTACK"];
 
-    const type = ({ word, speed, backward = false }: {word: string, speed: number, backward?: boolean}) =>
-      interval(speed).pipe(
-        map(x => backward
-          ? word.substring(0, word.length - x - 1)
-          : word.substring(0, x + 1)),
-        take(word.length)
-      );
-
-    const typeEfect = (word: string) =>
-        concat(
-          type({ word, speed: 100 }),
-          of('').pipe(delay(1500), ignoreElements()),
-          type({ word, speed: 30, backward: true }),
-          of('').pipe(delay(300), ignoreElements())
-        );
-
-    from(words)
-      .pipe(
-        concatMap(typeEfect),
-        repeat()
-      ).subscribe(word => {
-        this.profession = word;
-      })
+    this.typingEffectService
+        .typedWord(words)
+        .subscribe((word) => this.profession = word);
   }
 
   get yearsOfExperience() {

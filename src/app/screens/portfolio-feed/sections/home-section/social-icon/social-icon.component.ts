@@ -5,13 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './social-icon.component.html',
   styleUrls: ['./social-icon.component.scss']
 })
-export class SocialIconComponent implements OnInit {
+export class SocialIconComponent {
   @Input() icon: string = "";
   @Input() url: string = "";
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

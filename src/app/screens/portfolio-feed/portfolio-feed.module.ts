@@ -5,6 +5,7 @@ import { HomeSectionModule } from './sections/home-section/home-section.module';
 import { JobsSectionModule } from './sections/jobs-section/jobs-section.module';
 import { LabSectionModule } from './sections/lab-section/lab-section.module';
 import { ProjectsSectionModule } from './sections/projects-section/projects-section.module';
+import { ControlledScrollModule } from 'src/app/directives/controlled-scroll.module';
 
 
 
@@ -17,7 +18,8 @@ import { ProjectsSectionModule } from './sections/projects-section/projects-sect
     HomeSectionModule,
     JobsSectionModule,
     LabSectionModule,
-    ProjectsSectionModule
+    ProjectsSectionModule,
+    ControlledScrollModule
   ],
   exports: [
     PortfolioFeedComponent

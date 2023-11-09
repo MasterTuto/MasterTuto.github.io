@@ -1,16 +1,11 @@
-<app-section name="home">
+<app-section name="home" containerClass="items-center justify-center">
     <div class="flex justify-center gap-20 flex-wrap">
         <div class="relative inline-block">
             <img class="peer z-10 w-56 -translate-y-10 rounded-full pfp" src="assets/photo.png" alt="Foto de perfil">
 
             <pre class="code peer-hover:-translate-x-20 peer-hover:translate-y-2">{{requestsExample}}</pre>
 
-            <pre class="code peer-hover:translate-x-20 peer-hover:translate-y-24">
-.title {{ '{' }}
-    font-size: 7em;
-    font-family: Inter, sans-serif;
-{{ '}' }}
-            </pre>
+            <pre class="code peer-hover:translate-x-20 peer-hover:translate-y-24">{{ cssExample }}</pre>
 
             <pre class="code peer-hover:-translate-x-10 peer-hover:-translate-y-24">{{ todoList }}</pre>
         </div>

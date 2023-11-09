@@ -1,0 +1,26 @@
+<section class="flex flex-row gap-2 text-white h-fit">
+    <div class="flex-1 flex items-end min-h-fit">
+        <span class="w-full text-right text-5xl font-medium align-bottom">{{job.position}}</span>        
+    </div>
+    <div class="min-h-fit w-0.5 bg-slate-700/75"></div>
+    <div class="flex-1 h-fit">
+        <div>
+            <h3 class="font-semibold text-4xl uppercase">{{job.company}}</h3>
+            <h4 class="text-lg mb-4 uppercase">{{period}}</h4>
+        </div>
+        <div class="flex flex-col gap-2">
+            {{job.description}}
+
+            <ul class="list-disc pl-6">
+                <li *ngFor="let task of job.tasks">{{task}}</li>
+            </ul>
+
+            <ul class="flex flex-row items-center w-fit">
+
+                <app-hover-icon [icon]="tech.icon" *ngFor="let tech of job.usedTechnologies">
+                    {{tech.name}}
+                </app-hover-icon>
+            </ul>
+        </div>
+    </div>
+</section>
