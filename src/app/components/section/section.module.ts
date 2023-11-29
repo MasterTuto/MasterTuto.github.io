@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionComponent } from './section.component';
+import { ControlledScrollModule } from 'src/app/directives/controlled-scroll.module';
 
 
 
@@ -9,7 +10,8 @@ import { SectionComponent } from './section.component';
     SectionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ControlledScrollModule
   ],
   exports: [
     SectionComponent

@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Subject } from 'rxjs';
 import { sections } from 'src/app/data/sections.data';
 import { SectionStateService } from 'src/app/service/section-state.service';
+import { SectionService } from 'src/app/service/section.service';
 
 @Component({
   selector: 'app-navigation',
@@ -9,6 +10,7 @@ import { SectionStateService } from 'src/app/service/section-state.service';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+  sectionService = inject(SectionService);
   sectionStateService = inject(SectionStateService);
 
   selected = 0;  

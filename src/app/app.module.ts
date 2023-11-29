@@ -5,10 +5,9 @@ import { AppComponent } from './app.component';
 import { NavigationModule } from './components/navigation/navigation.module';
 import { PortfolioFeedModule } from './screens/portfolio-feed/portfolio-feed.module';
 
+
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     NavigationModule,

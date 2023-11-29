@@ -10,12 +10,13 @@ export class JobItemComponent implements OnInit {
   @Input() job!: JobExperience;
   @Input() index!: number;
 
-  constructor() { }
+  period: string = "";
 
   ngOnInit(): void {
+    this.period = this.getPeriod();
   }
 
-  get period(): string {
+  private getPeriod(): string {
     if (this.job.period == undefined) {
       return '';
     }

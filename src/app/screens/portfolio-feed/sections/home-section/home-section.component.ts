@@ -16,15 +16,19 @@ export class HomeSectionComponent implements OnInit {
   product = `let n = 1;\nfor (let i=0; i < 10; i++) {   n *= i;\n}\nconsole.log(\`n: \${n}\`);`
   cssExample = `.title {\n    font-size: 7em;\n    font-family: Inter, sans-serif;\n}`
 
+  yearsOfExperience: number = 0;
+
   ngOnInit(): void {
     const words = ["FRONT-END", "AUTOMATION", "FULLSTACK"];
 
     this.typingEffectService
         .typedWord(words)
         .subscribe((word) => this.profession = word);
+
+    this.yearsOfExperience = this.getYearsOfExperience();
   }
 
-  get yearsOfExperience() {
-    return new Date().getFullYear() - 2019;
+  getYearsOfExperience() {
+    return new Date().getFullYear() - 2020;
   }
 }

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { projectsData } from 'src/app/data/projects.data';
 import { Project } from 'src/app/model/project.model';
 
 @Component({
   selector: 'app-projects-section',
   templateUrl: './projects-section.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./projects-section.component.scss']
 })
 export class ProjectsSectionComponent implements OnInit {

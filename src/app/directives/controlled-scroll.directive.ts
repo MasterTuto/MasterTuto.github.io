@@ -1,32 +1,28 @@
 import { Directive, ElementRef, Input, inject } from "@angular/core";
-import { ScrollService } from "../service/scroll.service";
-import { fromEvent, tap } from "rxjs";
+import { SectionService } from "../service/section.service";
+import { SectionStateService } from "../service/section-state.service";
 
 @Directive({
-  selector: '[controlledScrollTo]',
+  selector: '[scrollNavigatedTo]',
 })
 export class ControlledScrollDirective {
-  elementRef: ElementRef<HTMLElement> = inject(ElementRef);
-  
-  scrollService = inject(ScrollService);
+  intersectionObserver: IntersectionObserver;
 
-  @Input('controlledScrollTo') controls: string = "";
+  elementRef: ElementRef<HTMLElement> = inject(ElementRef);  
+  sectionService = inject(SectionStateService);
 
-  private LISTEN_TO_EVENT = "wheel" as const;
+  @Input('scrollNavigatedTo') controls: string = "";
 
   constructor() {
-    // this.elementRef.nativeElement
-    //   .addEventListener(
-    //     this.LISTEN_TO_EVENT,
-    //     (event) => {
-    //       if (event.ctrlKey || event.shiftKey || event.altKey) {
-    //         return;
-    //       }
+    this.intersectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          console.log(this.controls);
+          this.sectionService.goToSectionByHash(this.controls);
+        }
+      });
+    });
 
-    //       event.stopPropagation();
-    //       this.scrollService.scrollTo(event.deltaY, this.controls);
-    //     },
-    //     { passive: false }
-    //   )
+    this.intersectionObserver.observe(this.elementRef.nativeElement);
   }
 }

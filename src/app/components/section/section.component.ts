@@ -5,13 +5,19 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './section.component.html',
   styleUrls: ['./section.component.scss']
 })
-export class SectionComponent {
+export class SectionComponent implements OnInit {
   @Input() name: string = "";
   @Input() title: string = "";
   @Input() containerClass: string = "";
 
-  get class() {
-    let currentClass = "w-[94vw] min-h-screen p-12 pt-0 flex flex-col";
+  className: string = "";
+
+  ngOnInit(): void {
+    this.className = this.getClassName();
+  }
+
+  getClassName() {
+    let currentClass = "w-[94vw] min-h-screen p-12 pt-0 flex flex-col max-md:px-0";
     if (this.containerClass != null)
       currentClass = `${currentClass} ${this.containerClass}`
     return currentClass;

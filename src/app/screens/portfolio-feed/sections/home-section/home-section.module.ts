@@ -6,6 +6,7 @@ import { NgIconsModule } from '@ng-icons/core';
 import { tablerBrandOpenSource, tablerBrandUpwork, tablerStar, tablerBrandGithub, tablerBrandLinkedin, tablerBrandTwitter, tablerX, tablerMail } from '@ng-icons/tabler-icons';
 import { SocialIconComponent } from './social-icon/social-icon.component';
 import { HoverIconModule } from 'src/app/components/hover-icon/hover-icon.module';
+import { ControlledScrollModule } from 'src/app/directives/controlled-scroll.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HoverIconModule } from 'src/app/components/hover-icon/hover-icon.module
       tablerStar,
       tablerX
     }),
-    HoverIconModule
+    HoverIconModule,
+    ControlledScrollModule
   ],
   exports: [
     HomeSectionComponent
