@@ -75,7 +75,6 @@ export const jobsData: JobExperience[] = [
       name: 'JavaScript/TypeScript'
     },
     ],
-      
   },
   {
     company: 'Perinity',
@@ -83,7 +82,7 @@ export const jobsData: JobExperience[] = [
     level: 'Junior',
     companyLinkedin: 'https://www.linkedin.com/company/13045572/',
     place: 'experience_perinity_place',
-    period: [new Date('2022-10-01'), null],
+    period: [new Date('2022-10-01'), new Date('2024-04-01')],
     description: 'Initially hired a front-end enginerr, due to company needs and in the presence of important project and good plans, I decided to dive into the full stack life by using Java and Angular (the stack in the company), writing unit tests and much more',
     tasks: [
       'Development of toolset to other developers',
@@ -102,6 +101,32 @@ export const jobsData: JobExperience[] = [
       icon: 'tablerGlobe',
       name: 'Java'
     }
+    ],
+  },
+  {
+    company: 'PocketLab',
+    position: 'Full-Stack Developer',
+    level: 'Mid',
+    companyLinkedin: 'https://www.linkedin.com/company/pocketlab/',
+    place: 'pocketlab_experience_place',
+    period: [new Date('2024-04-01'), null],
+    description: 'One of the fastest growing edtech companies in the US. The core principle are live updates and real time updates of student-teachers interactions. In here I deal with DynamoDB, CloudFormation, AWS Lambda, drawing API, auto grading APIs, lots of event based live updates, actions/stores on tree-like key-based structure. One of the biggest problems solved is adding an effective typed system to improve DX and fasten our deliveries.',
+    tasks: [
+      'Full-Stack serverless development in a monorepo',
+      'Deployment configuration',
+      'Front-end developement',
+      'Working with bluetooth API, data reading and development',
+      'Working with the iOS app',
+    ],
+    usedTechnologies: [
+      {
+        icon: 'tablerBrandAngular',
+        name: 'Angular'
+      },
+      {
+        icon: 'tablerBrandAws',
+        name: 'AWS'
+      },
     ],
   },
 ];
