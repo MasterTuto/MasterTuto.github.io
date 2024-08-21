@@ -4,6 +4,7 @@ import { JobItemComponent } from './job-item.component';
 import { NgIconsModule } from '@ng-icons/core';
 import {
   tablerBrandAngular,
+  tablerServer,
   tablerBrandBootstrap,
   tablerBrandFigma,
   tablerBrandHtml5,
@@ -32,6 +33,7 @@ import { HoverIconModule } from '../hover-icon/hover-icon.module';
       tablerBrandAngular,
       tablerBrandBootstrap,
       tablerBrandFigma,
+      tablerServer,
       tablerBrandHtml5,
       tablerBrandCss3,
       tablerBrandJavascript,
