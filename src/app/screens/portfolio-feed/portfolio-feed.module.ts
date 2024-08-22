@@ -6,12 +6,13 @@ import { JobsSectionModule } from './sections/jobs-section/jobs-section.module';
 import { LabSectionModule } from './sections/lab-section/lab-section.module';
 import { ProjectsSectionModule } from './sections/projects-section/projects-section.module';
 import { ControlledScrollModule } from 'src/app/directives/controlled-scroll.module';
+import { ReadingsSectionModule } from './sections/readings-section/readings-section.module';
 
 
 
 @NgModule({
   declarations: [
-    PortfolioFeedComponent
+    PortfolioFeedComponent,
   ],
   imports: [
     CommonModule,
@@ -19,8 +20,9 @@ import { ControlledScrollModule } from 'src/app/directives/controlled-scroll.mod
     JobsSectionModule,
     LabSectionModule,
     ProjectsSectionModule,
-    ControlledScrollModule
-  ],
+    ControlledScrollModule,
+    ReadingsSectionModule,
+],
   exports: [
     PortfolioFeedComponent
   ]

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TypingEffectService } from 'src/app/service/typing-effect.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { TypingEffectService } from 'src/app/service/typing-effect.service';
   templateUrl: './home-section.component.html',
   styleUrls: ['./home-section.component.scss']
 })
-export class HomeSectionComponent implements OnInit {
+export class HomeSectionComponent {
   typingEffectService = inject(TypingEffectService);
 
   profession: string = "";
@@ -18,7 +18,7 @@ export class HomeSectionComponent implements OnInit {
 
   yearsOfExperience: number = 0;
 
-  ngOnInit(): void {
+  constructor() {
     const words = ["FRONT-END", "AUTOMATION", "FULLSTACK"];
 
     this.typingEffectService

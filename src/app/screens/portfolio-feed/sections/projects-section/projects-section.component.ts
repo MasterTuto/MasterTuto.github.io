@@ -8,12 +8,10 @@ import { Project } from 'src/app/model/project.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./projects-section.component.scss']
 })
-export class ProjectsSectionComponent implements OnInit {
+export class ProjectsSectionComponent {
   projects: Project[] = [];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
     this.projects = projectsData.map((p) => ({
       id: Math.random().toString(),
       ...p
